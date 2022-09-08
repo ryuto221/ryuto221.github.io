@@ -1,0 +1,551 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+.pic{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.pic::before{
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 800px;
+    background: url(/main.jpg) no-repeat;
+    background-size: cover;
+    filter: sepia(100%);
+    opacity: 0;
+}
+.pic:hover::before{
+    opacity: .5;
+    animation: glitch 2.5s infinite linear; 
+}
+@keyframes glitch {
+    0%{
+        top: 0;
+        background-position: 6px 0;
+    }
+    20%{
+        top: 140px;
+        background-position: -5px -160px;
+    }
+    40%{
+        top: 300px;
+        background-position: 3px -320px;
+    }
+    60%{
+        top: 440px;
+        background-position: -3px -480px;
+    }
+    80%{
+        top: 600px;
+        background-position: 5px -640px;
+    }
+    100%{
+        top: 740px;
+        background-position: -6px -800px;
+    }
+}
+.hero {
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/back.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease;
+}
+nav{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.logo{
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+span{
+    color: rgb(255, 0, 0);
+}
+#menu{
+    margin: 0;
+    padding: 0;
+}
+#menu li{
+    list-style: none;
+    display: inline-block;
+    padding-top: 5px;
+}
+#menu li a{
+    text-decoration: none;
+    position: relative;
+    color: rgb(255, 0, 0);
+    display: block;
+    overflow: hidden;
+    transition: all 0.7s;
+    text-transform: uppercase;
+    padding-top: 5px;
+    font-weight: bold;
+}
+#menu li a::before{
+    content: "";
+    width: 30px;
+    position: absolute;
+    border-bottom: 2px solid;
+    bottom: 0;
+    right: 200px;
+    padding-top: 5px;
+    transition: all 0.4s;
+}
+#menu li a:hover::before{
+    right: 0;
+}
+nav{
+    transition: all 0.1s ease;
+}
+nav.ativo{
+    position: fixed;
+    background-color: black;
+    z-index: 10;
+    transition: all 0.1s ease;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+.btn{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+.btn:hover{
+    transform: scale(1.2);
+}
+.content{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+h1{
+    color: white;
+    margin: 20px 0px 20px;
+    font-size: 75px;
+}
+h3{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+h4{
+    color: rgb(255, 66, 66);
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.newslatter form{
+    width: 380px;
+    max-width: 100%;
+    position: relative;
+}
+.newslatter form input:first-child{
+    display: inline-block;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid rgb(255, 0, 0);
+    outline: none;
+    border-radius: 30px 0px 0px 30px;
+}
+.newslatter form input:last-child{
+    position: absolute;
+    display: inline-block;
+    outline: none;
+    border: none;
+    border: 2px solid rgb(255, 0, 0);
+    height: 47px;
+    padding: 14px 130px 14px 15px;
+    border-radius: 0px 30px 30px 0px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    transition: .4s ease;
+}
+.newslatter form input:last-child:hover{
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    border: 2px solid red;
+    height: 47px;
+    transition: .4s ease;
+}
+.about{
+    width: 100%;
+    padding: 100px 0px;
+    background: rgb(10, 10, 10);
+}
+.about img{
+    height: auto;
+    width: 430px;
+}
+.about-text{
+    width: 550px;
+}
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.about-text h5{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+.about-text p{
+    color: rgb(255, 118, 118);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+button{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s ease;
+}
+button:hover{
+    background-color: transparent;
+    border: 2px solid rgb(255, 0, 0);
+    cursor: pointer;
+}
+.service{
+    background: rgb(19, 19, 19);
+    width: 100%;
+    padding: 100px 0px;
+}
+.tittle h2{
+    color: white;
+    font-size: 75px;
+    width: 1130px;
+    margin: 30px auto;
+    text-align: center;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+.card{
+    height: 410px;
+    width: 335px;
+    padding: 20px 35px;
+    background: rgb(31, 31, 31);
+    border-radius: 15px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.card i{
+    font-size: 50px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+    color: rgb(255, 0, 0);
+
+}
+h5{
+    color: white;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+.pra p{
+    color: rgb(255, 66, 66);
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
+}
+.card .button{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 9px 22px;
+    border-radius: 30px;
+    transition: .4s ease;
+}
+.card .button:hover{
+    background-color: transparent;
+    border: 2px solid rgb(255, 0, 0);
+    cursor: pointer;
+}
+.contact-me{
+    width: 100%;
+    height: 450px;
+    background: rgb(10, 10, 10);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.contact-me p{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.contact-me .button-two{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    border-radius: 30px;
+    transition: .4s ease;
+}
+.contact-me .button-two:hover{
+    background-color: transparent;
+    border: 2px solid rgb(255, 0, 0);
+    cursor: pointer;
+}
+footer{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer p:nth-child(1){
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+footer p:nth-child(2){
+    color: white;
+    font-size: 17px;
+    width: 500px;
+    text-align: center;
+    line-height: 26px;
+}
+.sm{
+    padding: 20px 0px;
+}
+.sm a{
+    display: inline-block;
+    font-size: 20px;
+    width:  50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    margin: 0px 8px;
+    transition: 0.3s linear;
+    position: relative;
+}
+
+.sm a::before, .sm a::after{
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 0.3s linear;
+}
+
+.sm a:hover{
+    transform: scale(1.2);
+}
+
+.sm a:hover::before{
+    border-left: 2px solid;
+    border-right: 2px solid;
+    transform: skewX(20deg);
+}
+
+.sm a:hover::after{
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    transform: skewY(-20deg);
+}
+
+.end{
+    position: absolute;
+    color: rgb(255, 0, 0);
+    bottom: 35px;
+    font-size: 14px;
+}
+
+.middle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 500px;
+}
+.bar{
+    width: 6px;
+    height: 60px;
+    background: white;
+    display: inline-block;
+    transform-origin:  bottom center;
+    animation: loading 1.5s ease-in-out infinite;
+}
+.bar1{
+    animation-delay: 0.1s;
+}
+.bar2{
+    animation-delay: 0.2s;
+}
+.bar3{
+    animation-delay: 0.3s;
+}
+.bar4{
+    animation-delay: 0.4s;
+}
+.bar5{
+    animation-delay: 0.5s;
+}
+.bar6{
+    animation-delay: 0.6s;
+}
+.bar7{
+    animation-delay: 0.7s;
+}
+.bar8{
+    animation-delay: 0.8s;
+}
+
+
+@keyframes loading {
+    0%{
+        transform: scaleY(0.1);
+        background: #fff;
+    }
+    50%{
+        transform: scaleY(1);
+        background: rgb(255, 0, 0);
+    }
+    100%{
+        transform: scaleY(0.1);
+        background: transparent;
+    }
+}
+
+#preloader{
+    background: black;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    z-index: 999;
+    overflow-y: hidden;
+    position: fixed;
+}
+.contact-info{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card1{
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+    height: 140px;
+    background-color: rgb(41, 41, 41);
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.icon2{
+    font-size: 32px;
+    color: rgb(255, 0, 0);
+    transition: .3s linear;
+}
+
+.card1:hover .icon2{
+    transform: scale(4);
+    opacity: 0;
+}
+
+.card-content h3,
+.card-content span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+}
+.card-content h3{
+    top: 20px;
+    text-transform: uppercase;
+    color: rgb(255, 0, 0);
+}
+.card-content span{
+    bottom: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+.card1:hover h3{
+    opacity: 1;
+    top: 46px;
+    transition: .3s linear .3s;
+}
+.card1:hover span{
+    opacity: 1;
+    bottom: 46px;
+    transition: .3s linear .3s;
+}
+
+@media screen and (max-width:900px){
+    .card1{
+        flex: 100%;
+        max-width: 500px;
+    }
+}
